@@ -1,0 +1,34 @@
+
+<h1>Detail</h1>
+<hr/>
+<div>
+  <div>
+    <span class="badge alert-primary">Id :</span>
+    <span> {{emp.Id}}</span>
+</div>
+<div>
+    <span class="badge alert-primary">Name :</span>
+    <span> {{emp.FirstName +" "+ emp.LastName}} </span>
+</div>
+<div>
+    <span class="badge alert-primary">Country :</span>
+    <span> {{emp.Country}}</span>
+</div>
+<div>
+    <span class="badge alert-primary">Created Date :</span>
+    <span> {{emp.CreatedDate}}</span>
+</div>
+<div>
+    <span class="badge alert-primary">Addresses :</span>
+    <ul>
+      <li *ngFor="let item of emp.Addresses">
+        {{item.City}} , {{item.StreetAddress}} , {{item.Phone}}
+      </li>
+    </ul>
+  </div>
+
+</div>
+<br/>
+<button type="button" class="btn btn-info" (click)="GoBack()">Back</button>
+<br/>
+<br/>

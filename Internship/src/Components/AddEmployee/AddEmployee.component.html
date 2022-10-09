@@ -1,0 +1,20 @@
+<h1>Add Customer</h1>
+<hr>
+<form [formGroup]="MyForm" (ngSubmit)="send(MyForm.value)">
+  <div class="mb-3">
+    <label for="" class="form-label">Frist Name</label>
+    <input type="text" formControlName="FirstName" class="form-control">
+  </div>
+  <div class="mb-3">
+    <label for="" class="form-label">Last Name</label>
+    <input type="text" formControlName="LastName" class="form-control" placeholder="">
+  </div>
+  <div class="mb-3">
+    <label for="" class="form-label">Country</label>
+    <input type="text" formControlName="Country" class="form-control" placeholder="">
+  </div>
+  <button type="button" class="btn btn-info" (click)="GoBack()">Back</button> |
+  <input type = "submit" [disabled]="MyForm.invalid" class="btn btn-primary" value = "Save">
+  </form>
+  <br/>
+  <br/>

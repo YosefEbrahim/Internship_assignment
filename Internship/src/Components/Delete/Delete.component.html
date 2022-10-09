@@ -1,0 +1,30 @@
+<div class="alert alert-danger">
+  <h1>Are you sure to delete this Employee
+  </h1>
+<div>
+<div>
+  <span class="badge  alert-danger">Name :</span>
+  <span>    <span> {{emp.FirstName +" "+ emp.LastName}} </span></span>
+</div>
+<div>
+  <span class="badge alert-danger">Country :</span>
+  <span> {{emp.Country}}</span>
+</div>
+<div>
+  <span class="badge alert-danger">Created Date :</span>
+  <span> {{emp.CreatedDate}}</span>
+</div>
+<div>
+  <span class="badge alert-danger">Addresses :</span>
+  <ul>
+    <li *ngFor="let item of address">
+      {{item.City}} , {{item.StreetAddress}} , {{item.Phone}}
+    </li>
+  </ul>
+</div>
+</div>
+<br />
+<button type="button" class="btn btn-success" (click)="GoBack()">No</button> |
+<button class="btn btn-danger" type="submit" (click)="DeleteAction(emp.Id)">Yes</button>
+</div>
+

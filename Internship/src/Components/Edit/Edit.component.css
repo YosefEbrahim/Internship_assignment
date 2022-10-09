@@ -1,0 +1,12 @@
+caption
+{
+  caption-side:top;padding: 10px; color: black;font-weight: bold; border-top-left-radius: 20px;border-top-right-radius: 20px;
+}
+img
+{
+  width:20px;
+}
+
+  .invert{
+    filter: invert(100%);
+  }

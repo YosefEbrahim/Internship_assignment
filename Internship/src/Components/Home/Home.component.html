@@ -1,0 +1,25 @@
+
+<div style="display: flex; justify-content: right; margin-bottom: 20px;">
+  <a class="btn btn-primary" routerLink="/AddEmployee" >Add Customer</a>
+</div>
+  <table class="table table-bordered">
+      <tr>
+          <th>Customer ID</th>
+          <th>Customer Name</th>
+          <th>Country</th>
+          <th>Created Date</th>
+          <th>Edit</th>
+      </tr>
+          <tr *ngFor="let item of Model">
+              <td>{{item.Id}}</td>
+              <td>{{item.FirstName +" "+ item.LastName}}</td>
+              <td>{{item.Country}}</td>
+              <td>{{item.CreatedDate}}</td>
+              <td>
+                  <a  class="btn btn-info" [routerLink]="['/Edit/', item.Id]">Edit</a> |
+                  <a class="btn btn-danger" [routerLink]="['/Delete/', item.Id]">Delete</a> |
+                  <a class="btn btn-success" [routerLink]="['/ViewDetails/', item.Id]">View</a>
+              </td>
+          </tr>
+  </table>
+

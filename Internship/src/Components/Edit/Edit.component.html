@@ -1,0 +1,44 @@
+<h1>Edit</h1>
+<p>Person</p>
+<hr>
+<form [formGroup]="MyForm" (ngSubmit)="send(MyForm.value)">
+  <div >
+  <label>Frist Name</label>
+  <input type="text" formControlName="FirstName" class="form-control" >
+</div>
+<div>
+  <label>Last Name</label>
+  <input type="text" formControlName="LastName" class="form-control" placeholder="">
+</div>
+
+<br>
+<br>
+<table class="table table-bordered">
+  <caption class="table-active" >Address List</caption>
+  <tr>
+
+  <th>City</th>
+  <th>Street Address</th>
+  <th>Phone</th>
+  <th style="display: flex; justify-content: right;">
+    <a class="btn btn-primary"  [routerLink]="['/AddAddress/', emp.Id]">+</a>
+  </th>
+  </tr>
+  <tr *ngFor="let item of emp.Addresses">
+    <td>{{item.City}}</td>
+    <td>{{item.StreetAddress}}</td>
+    <td>{{item.Phone}}</td>
+    <td>
+      <a  class="btn btn-outline-secondary" [routerLink]="['/EditAddress/', item.Id]"><img src="assets/edit.png" /></a>
+      <a class="btn btn-danger" (click)="DeleteAddterss(item.Id)" style="margin-left: 10px;"><img src="assets/delete.png" class="invert"/></a>
+    </td>
+  </tr>
+</table>
+<input type = "submit" [disabled]="MyForm.invalid" class="btn btn-success" value = "Save">
+<br>
+<br>
+<button type="button" class="btn btn-outline-primary" (click)="GoBack()">Back To List</button>
+<br>
+<br>
+</form>
+
